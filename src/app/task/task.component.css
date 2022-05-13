@@ -1,0 +1,9 @@
+.taskContainer{
+    background: #E8E8E8;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+.taskContainer > p {
+    display: inline;
+    word-break: break-all;
+}
