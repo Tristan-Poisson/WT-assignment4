@@ -1,9 +1,32 @@
 .taskContainer{
     background: #E8E8E8;
     border-radius: 5px;
+    margin-top: 5px;
     padding-left: 5px;
 }
 .taskContainer > p {
     display: inline;
     word-break: break-all;
+}
+button {
+    border-radius: 25px;
+}
+.title {
+    font-size: 24px;
+    height: 32px;
+    width: 97%;
+    resize: none;
+    border: none;
+}
+.title:hover{
+    border: none;
+}
+textarea {
+    resize: none;
+    border: none;
+    width: 97%;
+    background: transparent;
+}
+textarea:hover {
+    border: solid 1px #888;
 }
