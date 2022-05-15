@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row class="headerContainer">
         <span>Assignment</span>
         <span class="example-spacer"></span>
         <a  *ngIf="!(isLoggedIn | async)" class="example-icon" [routerLink]="['login']" routerLinkActive="active-link" mat-raised-button color="warn">Login</a>

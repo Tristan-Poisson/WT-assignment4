@@ -1,7 +1,10 @@
 .example-icon {
-    padding: 0 14px;
-  }
+  padding: 0 14px;
+}
   
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+.example-spacer {
+  flex: 1 1 auto;
+}
+.headerContainer {
+  background-image: linear-gradient(to right, rgb(181, 47, 243) , rgb(97, 64, 215));
+}
