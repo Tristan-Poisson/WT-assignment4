@@ -2,8 +2,10 @@ const express = require('express');
 
 function createRouter(db) {
   const router = express.Router();
-  const owner = '';
 
+  router.get('/', function (req, res, next) {
+    res.send('Hello World');
+  });
   router.get('/login', function (req, res, next) {
     db.query(
       'SELECT * FROM users WHERE email = ? AND password = ?',
