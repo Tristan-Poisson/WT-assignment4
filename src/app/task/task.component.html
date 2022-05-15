@@ -1,9 +1,12 @@
 <div class="taskContainer" (mouseover)="revealInfo=true" (mouseleave)="revealInfo=false">
-    <textarea #titleInput (change)="editTitle(titleInput.value)" class="title">{{Task.title | titlecase}}</textarea>
-    <textarea #descInput (change)="editDesc(descInput.value)">{{Task.description}}</textarea><br>
+    <textarea #titleInput (change)="editTitle(titleInput.value)" class="title"  spellcheck="false"
+        >{{Task.title | titlecase}}</textarea>
+    <textarea spellcheck="false" #descInput (change)="editDesc(descInput.value)"
+    >{{Task.description}}</textarea><br>
     <div *ngIf="revealInfo">
         <button (click)="changePriority()" [ngStyle]="{ background: priorityColor }">  Priority : {{Task.priority}}</button>
-        <textarea #usernameInput (keyup)="editUser(usernameInput.value)">{{Task.user}}</textarea>
+        <textarea spellcheck="false" #usernameInput (keyup)="editUser(usernameInput.value)"
+        >{{Task.user}}</textarea>
         <button (click)="deleteTask()">Delete</button>
     </div>
 </div>
