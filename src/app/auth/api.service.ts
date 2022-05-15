@@ -10,17 +10,31 @@ import { CommonResponse } from "../common/common-response";
   providedIn: 'root'
 })
 export class ApiService {
-  //private endPoint:string = "https://reqres.in/api/";
   loginStatus = new BehaviorSubject<boolean>(this.hasToken());
-
+  serverUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router ) { 
   }
+
+  private async request(method: string, url: string, data?: any) {
+
+    const result = this.http.request(method, url, {
+      body: data,
+      responseType: 'json',
+      observe: 'body',
+      headers: {}
+    });
+    return new Promise((resolve, reject) => {
+      result.subscribe(resolve, reject);
+    });
+  }
+
   /**
    * 
    * @param formData as the login form data
    */
   login(formData:any) {
+    //var result = this.request('GET', `${this.serverUrl}/login`, formData);
     this.cookieService.set("currentUser", formData.email);
     this.loginStatus.next(true);
     return 200;
@@ -31,24 +45,10 @@ export class ApiService {
    * @param formData as the login form data
    */
   signup(formData:any) {
+    //var result = this.request('GET', `${this.serverUrl}/signup`, formData);
     return 200;
   }
-  /**
-   * 
-   * @param error error 
-   */
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-  };
+
 
   logout(){
     this.loginStatus.next(false);
