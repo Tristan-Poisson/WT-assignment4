@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   date!: Date;
   ngOnInit(): void {
-    this.user = "Valentin Gandon";
+    this.user = "";
 
     this.TodoTaskList = [];
     this.DoingTaskList = [];
