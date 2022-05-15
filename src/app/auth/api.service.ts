@@ -45,7 +45,7 @@ export class ApiService {
    * @param formData as the login form data
    */
   signup(formData:any) {
-    //var result = this.request('GET', `${this.serverUrl}/signup`, formData);
+    //var result = this.request('POST', `${this.serverUrl}/signup`, formData);
     return 200;
   }
 
