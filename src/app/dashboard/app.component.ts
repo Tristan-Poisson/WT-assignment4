@@ -21,28 +21,12 @@ export class DashboardComponent implements OnInit {
 
   date!: Date;
   ngOnInit(): void {
-    this.user = "Valentin Gandon";// this information needs to be provided by server
+    this.user = "Valentin Gandon";
 
-    this.TodoTaskList = [
-/*      {title: "Manger", description:"Miam"},
-      {title: "Bosser", description:"5 minutes de révision une heure de pause"},
-      {title: "Dormir", description:"Une journée bien remplie"},
-*/
-    ];
-    this.DoingTaskList = [
-/*      {title: "Faire ci", description:"Miam"},
-      {title: "Faire ca", description:"5 minutes de révision une heure de pause"},
-      {title: "Trouver des taches", description:"Pour s'occuper"},
-      */
-    ];
-    this.DoneTaskList = [
-/*      {title: "Respirer", description:"Pour la santé"},
-      {title: "Rigoler", description:"Pour ne pas perdre sa journée"},
-      {title: "Chill", description:"pour le moral"},*/
-    ];
-    this.CancelledTaskList = [
-//      {title: "Rien", description:"On annule rien ici"},
-    ];
+    this.TodoTaskList = [];
+    this.DoingTaskList = [];
+    this.DoneTaskList = [];
+    this.CancelledTaskList = [];
     this.date = new Date();
   }
   drop(event: CdkDragDrop<Task[]>) {
@@ -59,16 +43,13 @@ export class DashboardComponent implements OnInit {
   }
   addTask(taskList: Task[]): void {
     taskList.push({title: "Title", description:"Task description", user:this.user, priority:"Normal"});
-    //back need to be updated
   }
   updateTask(taskToSuppr: Task, tab: Task[]): void {
-    // back need to be updated
   }
   deleteTask(taskToSuppr: Task, tab: Task[]): void {
     const index = tab.indexOf(taskToSuppr);
     if (index != -1) {
       tab.splice(index, 1);
     }
-    // back need to be updated
   }
 }
